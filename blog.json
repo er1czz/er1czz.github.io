@@ -2,7 +2,7 @@
  {
   "url_title": "About",
   "title": "About",
-   "top_image": "none",
+   "top_image": false,
   "sub_title": "Education & Background",
  
   "visible": true
