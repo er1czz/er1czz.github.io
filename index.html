@@ -32,7 +32,7 @@
                 <span style="display:block;"><a href="https://www.youtube.com/channel/UCMTn0rlAbidTzjl7ICLkbng/videos" target="_blank" class="socials"><i class="fab fa-youtube"></i></a></span>
                 </div>
       </div>
-   
+    </div>
     <div id="display">
         <div id="blog_section">
         <h1>Hi there! I'm Eric</h1>
@@ -60,7 +60,7 @@
         }
         for (var i = 0; i < blog.length; i++) {
           $("#blogs").append(`
-            <a href="./blog/${blog[i].url_title}/" target="_blank">
+            <a href="./blog/${blog[i].url_title}/" target="_self">
                 <section>
                     <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
                     <div class="blog_container">
