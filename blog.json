@@ -2,7 +2,7 @@
  {
   "url_title": "About",
   "title": "About",
-  "sub_title": "my xyz",
+  "sub_title": "my XYZ",
   "top_image": "top_image.jpeg",
   "visible": true
  }
@@ -10,7 +10,7 @@
  {
  "url_title": "photo",
   "title": "Fotographie",
-  "sub_title": "capture the beauty of daily life",
+  "sub_title": "appreciate the beauty of daily life",
   "top_image": "top_image.jpeg",
   "visible": true
  }
