@@ -2,7 +2,14 @@
  {
   "url_title": "About",
   "title": "About",
-  "sub_title": "Education & Background",
+  "sub_title": "my xyz",
+  "top_image": "top_image.jpeg",
+  "visible": true
+ }
+ ,
+   "url_title": "photo",
+  "title": "Fotographie",
+  "sub_title": "capture the beauty of daily life",
   "top_image": "top_image.jpeg",
   "visible": true
  }
