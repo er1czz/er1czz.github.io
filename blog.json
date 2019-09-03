@@ -7,7 +7,8 @@
   "visible": true
  }
  ,
-   "url_title": "photo",
+ {
+ "url_title": "photo",
   "title": "Fotographie",
   "sub_title": "capture the beauty of daily life",
   "top_image": "top_image.jpeg",
