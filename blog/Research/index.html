@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.jpeg) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Research</h1>
+      <h2 id="blog_sub_title">seek the truth behind nature's magic</h2>
+        <div id="blog">
+            <p id="para_0_original">I am a geochemist and my research focuses on earth materials that can improve the sustainability of modern civilization. I am particularly interested in the geochemistry occurring at liquid/solid interfaces. My current work investigates the environmental degradation of <b> nuclear materials</b> and fluid-rock interactions in <b>unconventional shale</b>.</p>
+            
+            <p id="para_1_original"><b>Core Competencies</b>:
+            <ul style="list-style-type:square;">
+            <li>Experimentations: ICP-MS, IR, NMR, Raman, SEM/ EDS, XRD, etc.</li>
+            <li>Computations: Molecular Dynamics Simuation, Density Functional Theory, Jupyter Notebook, Python, etc.</li>
+            <li>Scientific outreach & Leadership: talks, videos, Leadership LSU Class of 2015 <a href="https://www.lsu.edu/mediacenter/news/2015/04/24leadership.php">(link)</a>
+            </p>
+            <p id="para_2_original"><b>Characterizing the degradation of apatite waste form material (Experimental)</b></p>
+            <p id="para_3_original">This project is to characterize the mechanism of iodine release from iodoapatite Pb<sub>9.85</sub>(VO<sub>4</sub>)<sub>6</sub>I<sub>1.7</sub>, a promising waste form to immobilize radionuclide iodine-129, in aqueous environments. I conducted semi-dynamic leaching tests (ASTM C1308) on bulk samples in cap-sealed Teflon vessels filled with aqueous solutions, imitating various environmental conditions. The collected aliquots were analyzed by ICP-MS and ICP-OES, and the chemical and physical alterations to samples were characterized by XRD, SEM-EDS, TEM microscopy, Raman, and infrared spectroscopy. Solution and surface characterization showed that the iodine release is controlled by both short-term diffusion and long-term congruent dissolution processes, and the release rate is highly sensitive to the solution chemistry such as solution pH, ionic species, and saturation state. In addition, I observed formation of secondary phases, such as Pb<sub>2</sub>V<sub>2</sub>O<sub>7</sub> from pH 4, Pb<sub>5</sub>(VO<sub>4</sub>)<sub>3</sub>Cl from NaCl, and Pb<sub>5</sub>(VO<sub>4</sub>)<sub>3</sub>OH from pH 10. The findings of this project provide a theoretical framework for improving long-term disposal safety of nuclear waste. I made an award-wining educational <a href="/blog/vid/index.html"><b>video</b></a> on this topic.</p>
+            <p><img src="/img/apatite_TOC.png"><p>
+        </div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://er1czz.github.io", "_self">Return to Homepage</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+
+
+</body></html>
