@@ -15,6 +15,14 @@
   "visible": true
  }
  ,
+  {
+ "url_title": "vid",
+  "title": "Video",
+  "sub_title": "cook science easy to digest",
+  "top_image": "top_image.jpeg",
+  "visible": true
+ }
+ ,
  {
  "url_title": "photo",
   "title": "Fotographie",
