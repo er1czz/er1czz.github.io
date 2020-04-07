@@ -109,6 +109,22 @@
                   <p><font color="#D55E00">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #D55E00</font> Red</p>
                   <p><font color="#CC79A7">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #CC79A7</font> Pink</p>
 </div>
+      <script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
       </div>
     <div id="footer_blog">
       <a href="https://er1czz.github.io", "_self">Return to Homepage</a>
@@ -146,21 +162,5 @@
         }
       });
     </script>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
 
 </body></html>
