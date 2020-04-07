@@ -6,7 +6,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../../index.css"></head>
+  <link rel="stylesheet" href="../../index.css">
+    <style>
+.collapsible {
+  background-color: #999999;
+  background-image: linear-gradient(to right, #D55E00,#CC79A7, #F0E442, #009E73,#56B4E9, #0072B2, #000000); /* Standard syntax (must be last) */
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: auto;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 20px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+    </head>
   <body>
     <div id="loading">
       <div id="spinner"></div>
@@ -96,6 +122,34 @@
         }
       });
     </script>
+<button type="button" class="collapsible"><b>Color palette</b> (friendly to protanopia, deuteranopia, and tritanopia) <a href="https://jfly.uni-koeln.de/color/image/pallete.jpg" target="_blank" class="socials"><i class="fas fa-external-link-square-alt"></i></a></p></button>
+<div class="content">
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; ❏ #000000 Black </p>
+                  <p><font color="#E69F00">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #E69F00</font> Orange</p>
+                  <p><font color="#56B4E9">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #56B4E9</font> Sky Blue </p>
+                  <p><font color="#009E73">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #009E73</font> Green</p>
+                  <p><font color="#F0E442">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #F0E442</font> Yellow</p>
+                  <p><font color="#0072B2">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #0072B2</font> Blue</p>
+                  <p><font color="#D55E00">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #D55E00</font> Red</p>
+                  <p><font color="#CC79A7">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #CC79A7</font> Pink</p>
+</div>
 
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
 
 </body></html>
