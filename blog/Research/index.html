@@ -88,15 +88,7 @@
                 <p id="para_10_original">&nbsp; &nbsp; My go-to blog about academic life-style <a href="https://xykademiqz.com/" target="_blank" class="socials"><b>xykademiqz</b> <i class="fab fa-wordpress-simple"></i></a></p>
                 <p id="para_12_original">&nbsp; &nbsp; State of the art in Machine Learning <a href="https://distill.pub/"target="_blank" class="socials"><b>Distill.pub</b> <i class="fas fa-tint"></i></a></p>
                 <p id="para_11_original">&nbsp; &nbsp; Books written by R Markdown <a href="https://bookdown.org/home/archive/" target="_blank" class="socials"><b>BOOKDOWN.org</b> <i class="fas fa-pen-nib"></i></a></p>
-                <p id="para_11_original">&nbsp; &nbsp; <a href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank" class="socials">Color palette <i class="fas fa-palette"></i></a> <a href="https://jfly.uni-koeln.de/color/image/pallete.jpg" target="_blank" class="socials">(friendly to protanopia, deuteranopia, and tritanopia)</a></p>
-                <p>&nbsp; &nbsp; &nbsp; &nbsp; ❏ #000000 Black </p>
-                  <p><font color="#E69F00">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #E69F00</font> Orange</p>
-                  <p><font color="#56B4E9">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #56B4E9</font> Sky Blue </p>
-                  <p><font color="#009E73">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #009E73</font> Green</p>
-                  <p><font color="#F0E442">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #F0E442</font> Yellow</p>
-                  <p><font color="#0072B2">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #0072B2</font> Blue</p>
-                  <p><font color="#D55E00">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #D55E00</font> Red</p>
-                  <p><font color="#CC79A7">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #CC79A7</font> Pink</p>
+
         </div>
     <button type="button" class="collapsible"><b>Color Palette</b>, + friendly to protanopia, deuteranopia, and tritanopia <a href="https://jfly.uni-koeln.de/color/image/pallete.jpg" target="_blank" class="socials"><i class="fas fa-external-link-square-alt"></i></a></button>
               <div class="content">
@@ -110,7 +102,11 @@
                   <p><font color="#CC79A7">&nbsp; &nbsp; &nbsp; &nbsp; ⬛ #CC79A7</font> Pink</p>
                </div>
       </div>
-      <script>
+
+    <div id="footer_blog">
+      <a href="https://er1czz.github.io", "_self">Return to Homepage</a>
+    </div>
+        <script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -118,17 +114,14 @@ for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
     } else {
-      content.style.display = "block";
-    }
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
   });
 }
 </script>
-    <div id="footer_blog">
-      <a href="https://er1czz.github.io", "_self">Return to Homepage</a>
-    </div>
     <script type="text/javascript">
       setTimeout(function() {
         document.getElementById("loading").classList.add("animated");
