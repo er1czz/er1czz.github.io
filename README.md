@@ -1,6 +1,6 @@
-https://er1czz.github.io
+### Please visit https://er1czz.github.io
 
-inpiration: 
-https://tfoliojk.themeix.com/
-https://imfunniee.github.io/gitfolio/
+### Inpired by:   
+- https://tfoliojk.themeix.com/  
+- https://imfunniee.github.io/gitfolio/  
 
