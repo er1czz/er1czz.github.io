@@ -1,4 +1,4 @@
-### **https://er1czz.github.io** 
+### Personal website **https://er1czz.github.io** 
 
 ### Inpired by:   
 - https://tfoliojk.themeix.com/  
