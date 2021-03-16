@@ -49,10 +49,10 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
 #### Note: Drawing the timeline (bulk) on a sketch paper is helpful to understand their relationship.
 
 4.1 How many days between start_date and end_date: 
- - DATE_DIFF('DAY', DATE(start_date), DATE(end_date))  
+    DATE_DIFF('DAY', DATE(start_date), DATE(end_date))  
 
 4.2 How many weeks between start_date and end_date: 
- - DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))  
+    DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))  
 
 4.2.1 Edge cases I, what if start date is in the weekend: 
     (CASE WHEN DATE_FORMAT(start_date, '%W') = 'Saturday' THEN -1 
@@ -72,7 +72,7 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
 ### Therefore, how many weekdays: DATE_DIFF('DAY', DATE(start_date), DATE(end_date)) - **weekend_day**
 
 ## 5. Add / minus 7 days of a given date: 
-- DATE_ADD('day', 7, DATE(given_date)) 
-- DATE_ADD('day', -7, DATE(given_date))
+    DATE_ADD('day', 7, DATE(given_date)) 
+    DATE_ADD('day', -7, DATE(given_date))
 
 ## 6. Everyone hates SageMaker. Nobody likes AWS.
