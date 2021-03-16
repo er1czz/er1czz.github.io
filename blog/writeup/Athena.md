@@ -4,7 +4,7 @@ note:
 - Creating tables can only be done in Athena not PyAthena (to date); 
 - Quotation "" is different from ''.
 
-1. Setup (assume you have installed the perm to access Athena) 
+1. [Setup](https://aws.amazon.com/blogs/machine-learning/run-sql-queries-from-your-sagemaker-notebooks-using-amazon-athena/) (assume you have installed the perm to access Athena) 
 import sys
 !{sys.executable} -m pip install PyAthena
 
