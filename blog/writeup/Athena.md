@@ -1,10 +1,10 @@
-AWS Athena is based on Presto SQL, which may take some time to get comfortable with. 
+# AWS Athena is based on Presto SQL, which may take some time to get comfortable with. 
 note: 
 - Athena query is case sensitive; 
 - Creating tables can only be done in Athena not PyAthena (to date); 
 - Quotation "" is different from ''.
 
-1. [Setup](https://aws.amazon.com/blogs/machine-learning/run-sql-queries-from-your-sagemaker-notebooks-using-amazon-athena/) (assume you have installed the perm to access AWS S3)   
+## 1. [Setup](https://aws.amazon.com/blogs/machine-learning/run-sql-queries-from-your-sagemaker-notebooks-using-amazon-athena/) (assume you have installed the perm to access AWS S3)   
 import sys  
 !{sys.executable} -m pip install PyAthena  
 
@@ -18,12 +18,14 @@ FROM "athenaquery"."<YOUR TABLE NAME>"
 LIMIT 3  
 ;""", conn)  
   
-2. How to convert a numerical string to date (e.g. 20201010 to 2020-10-10)  
+## 2. How to convert a numerical string to date (e.g. 20201010 to 2020-10-10)  
    DATE(DATE_PARSE('20201010', '%Y%M%D'))  
    
-3. Day of the week
+## 3. Day of the week
+EXTRACT(DAY_OF_WEEK FROM DATE('2020-10-10'))     (e.g. 1,2,3,4,5,6,7). 
+DATE_FORMAT(DATE('2020-10-10'), '%W').   (e.g. Monday, Tuesday, ..., Sunday)
 
-4. How to calculate weekdays (my way, many popular methods are not applicable to Athena) 
+## 4. How to calculate weekdays (my way, many popular methods are not applicable to Athena) 
 To calculate weekdays is essentially to calcualte weekends.
 e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole week.
 2020-12-03 (Thu) to 2020-12-04 (Fri): 1
@@ -33,13 +35,21 @@ Two weekends (four days in total), 9 business days. (9 business days = 13 days -
 In Python Pandas, len(pd.bdate_range('2020-12-03', '2020-12-14')) **-1** = 9. 
 In Office Excel, NETWORKDAYS(date1, date2) **- 1** = 9. 
 
-In Athena,
+### In Athena,
 **DATE_DIFF, DATE_TRUNC, DATE_FORMAT, and CASE**  
+
+### <<<<<<<< week 1 >>>>>>> start_date >>
+### <<<<<<<< week x >>>>>>> end_date >>
+#### Note: Drawing the timeline (bulk) on a sketch paper is helpful to understand their relationship.
+
 4.1 How many days between start_date and end_date: DATE_DIFF('DAY', DATE(start_date), DATE(end_date))  
 4.2 How many weeks between start_date and end_date: DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))  
-4.2.1 Edge cases I what if start date is in the weekend: (CASE WHEN DATE_FORMAT('W', start_date) = 'Saturday' THEN -1 WHEN DATE_FORMAT('W', start_date) = 'Sunday' THEN -2 ELSE 0 END)
-4.2.2 Edge case II what if end date is in the weekend: (CASE WHEN DATE_FORMAT('W', end_date) = 'Saturday' THEN +1 WHEN DATE_FORMAT('W', end_date) = 'Sunday' THEN +2 ELSE 0 END)  
-To sum up, how many days of weekends between start_date and end_date:    
+4.2.1 Edge cases I, what if start date is in the weekend: (CASE WHEN DATE_FORMAT('W', start_date) = 'Saturday' THEN -1 WHEN DATE_FORMAT('W', start_date) = 'Sunday' THEN -2 ELSE 0 END). 
+4.2.2 Edge case II, what if end date is in the weekend: (CASE WHEN DATE_FORMAT('W', end_date) = 'Saturday' THEN +1 WHEN DATE_FORMAT('W', end_date) = 'Sunday' THEN +2 ELSE 0 END)    
+
+### To sum up, how many days of weekends between start_date and end_date:    
     (DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))) x 2 + 
     (CASE WHEN DATE_FORMAT('W', start_date) = 'Saturday' THEN -1 WHEN DATE_FORMAT('W', start_date) = 'Sunday' THEN -2 ELSE 0 END) +  
     (CASE WHEN DATE_FORMAT('W', end_date) = 'Saturday' THEN +1 WHEN DATE_FORMAT('W', end_date) = 'Sunday' THEN +2 ELSE 0 END)  
+
+5. Add / minus 7 days of a given date: DATE_ADD('day', 7, DATE(given_date)) or DATE_ADD('day', -7, DATE(given_date))
