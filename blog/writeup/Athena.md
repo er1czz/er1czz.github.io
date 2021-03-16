@@ -1,6 +1,6 @@
 # AWS Athena is based on Presto SQL, which may take some time to get comfortable with. 
 note: 
-- Athena query is case sensitive; 
+- Athena query is case sensitive (can be different functions); 
 - Creating tables can only be done in Athena not PyAthena (to date); 
 - Quotation "" is different from ''.
 
@@ -19,7 +19,7 @@ LIMIT 3
 ;""", conn)  
   
 ## 2. How to convert a numerical string to date (e.g. 20201010 to 2020-10-10)  
-   DATE(DATE_PARSE('20201010', '%Y%M%D'))  
+   DATE(DATE_PARSE('20201010', '%y%m%d'))  
    
 ## 3. Day of the week
 EXTRACT(DAY_OF_WEEK FROM DATE('2020-10-10'))     (e.g. 1,2,3,4,5,6,7). 
@@ -32,8 +32,9 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
 2020-12-07 (Mon) to 2020-12-11 (Fri): 5
 2020-12-14 (Mon) to 2020-12-16 (Wed): 3
 Two weekends (four days in total), 9 business days. (9 business days = 13 days - 4 days)
-In Python Pandas, len(pd.bdate_range('2020-12-03', '2020-12-14')) **-1** = 9. 
-In Office Excel, NETWORKDAYS(date1, date2) **- 1** = 9. 
+### Note:
+- In Python Pandas, len(pd.bdate_range('2020-12-03', '2020-12-14')) **-1** = 9. 
+- In Office Excel, NETWORKDAYS(date1, date2) **- 1** = 9. 
 
 ### In Athena,
 **DATE_DIFF, DATE_TRUNC, DATE_FORMAT, and CASE**  
@@ -49,7 +50,8 @@ In Office Excel, NETWORKDAYS(date1, date2) **- 1** = 9.
 
 ### To sum up, how many days of weekends between start_date and end_date:    
     (DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))) x 2 + 
-    (CASE WHEN DATE_FORMAT('W', start_date) = 'Saturday' THEN -1 WHEN DATE_FORMAT('W', start_date) = 'Sunday' THEN -2 ELSE 0 END) +  
-    (CASE WHEN DATE_FORMAT('W', end_date) = 'Saturday' THEN +1 WHEN DATE_FORMAT('W', end_date) = 'Sunday' THEN +2 ELSE 0 END)  
+    (CASE WHEN DATE_FORMAT(start_date, '%W') = 'Saturday' THEN -1 WHEN DATE_FORMAT(start_date, '%W') = 'Sunday' THEN -2 ELSE 0 END) +  
+    (CASE WHEN DATE_FORMAT(end_date, '%W') = 'Saturday' THEN +1 WHEN DATE_FORMAT(end_date, '%W') = 'Sunday' THEN +2 ELSE 0 END)  AS weekend_day
+### Therefore, how many weekdays: DATE_DIFF('DAY', DATE(start_date), DATE(end_date)) - **weekend_day**
 
 5. Add / minus 7 days of a given date: DATE_ADD('day', 7, DATE(given_date)) or DATE_ADD('day', -7, DATE(given_date))
