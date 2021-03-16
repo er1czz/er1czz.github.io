@@ -5,7 +5,7 @@ note:
 - To date, creating tables can only be done in Athena not PyAthena; 
 - Quotation " " is different from ' '.
 - Be patient. Often the error is caused by typo, especially the extra *comma* before **FROM**; 
-- Once you ran a complicated query successfully, make a copy for future use. 
+- Once you ran a complicated query successfully, make a copy just in case. 
 
 ## 1. [Setup](https://aws.amazon.com/blogs/machine-learning/run-sql-queries-from-your-sagemaker-notebooks-using-amazon-athena/) (assume you have installed the perm to access AWS S3)   
 import sys  
