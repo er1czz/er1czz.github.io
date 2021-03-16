@@ -17,7 +17,9 @@ SELECT *
 FROM "athenaquery"."<YOUR TABLE NAME>"  
 LIMIT 3  
 ;""", conn)  
-  
+
+### (Note: pay attention to the number of quotation marks, different from the AWS tutorial which is strangly not working).
+
 ## 2. How to convert a numerical string to date (e.g. 20201010 to 2020-10-10)  
    DATE(DATE_PARSE('20201010', '%y%m%d'))  
    
@@ -57,3 +59,5 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
 ## 5. Add / minus 7 days of a given date: 
 - DATE_ADD('day', 7, DATE(given_date)) 
 - DATE_ADD('day', -7, DATE(given_date))
+
+## 6. Everyone hates SageMaker. Nobody enjoy AWS.
