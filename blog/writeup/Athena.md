@@ -53,7 +53,8 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
 ### To sum up, how many days of weekends between start_date and end_date:    
     (DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))) x 2 + 
     (CASE WHEN DATE_FORMAT(start_date, '%W') = 'Saturday' THEN -1 WHEN DATE_FORMAT(start_date, '%W') = 'Sunday' THEN -2 ELSE 0 END) +  
-    (CASE WHEN DATE_FORMAT(end_date, '%W') = 'Saturday' THEN +1 WHEN DATE_FORMAT(end_date, '%W') = 'Sunday' THEN +2 ELSE 0 END)  AS weekend_day. 
+    (CASE WHEN DATE_FORMAT(end_date, '%W') = 'Saturday' THEN +1 WHEN DATE_FORMAT(end_date, '%W') = 'Sunday' THEN +2 ELSE 0 END)  
+    AS weekend_day.   
 ### Therefore, how many weekdays: DATE_DIFF('DAY', DATE(start_date), DATE(end_date)) - **weekend_day**
 
 ## 5. Add / minus 7 days of a given date: 
