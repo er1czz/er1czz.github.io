@@ -1,8 +1,11 @@
 # AWS Athena is based on Presto SQL, which may take some time to get comfortable with. 
 note: 
 - Athena query is case sensitive (can be different functions); 
-- Creating tables can only be done in Athena not PyAthena (to date); 
+- In Athena, if you select certain section with cursor, Athena will only run the selected section;
+- To date, creating tables can only be done in Athena not PyAthena; 
 - Quotation " " is different from ' '.
+- Be patient. Often the error is caused by typo, especially the extra *comma* before **FROM**; 
+- Once you ran a complicated query successfully, make a copy for future use. 
 
 ## 1. [Setup](https://aws.amazon.com/blogs/machine-learning/run-sql-queries-from-your-sagemaker-notebooks-using-amazon-athena/) (assume you have installed the perm to access AWS S3)   
 import sys  
@@ -47,8 +50,8 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
 
 4.1 How many days between start_date and end_date: DATE_DIFF('DAY', DATE(start_date), DATE(end_date))  
 4.2 How many weeks between start_date and end_date: DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))  
-4.2.1 Edge cases I, what if start date is in the weekend: (CASE WHEN DATE_FORMAT('W', start_date) = 'Saturday' THEN -1 WHEN DATE_FORMAT('W', start_date) = 'Sunday' THEN -2 ELSE 0 END).  
-4.2.2 Edge case II, what if end date is in the weekend: (CASE WHEN DATE_FORMAT('W', end_date) = 'Saturday' THEN +1 WHEN DATE_FORMAT('W', end_date) = 'Sunday' THEN +2 ELSE 0 END)    
+4.2.1 Edge cases I, what if start date is in the weekend: (CASE WHEN DATE_FORMAT(start_date, '%W') = 'Saturday' THEN -1 WHEN DATE_FORMAT(start_date, '%W') = 'Sunday' THEN -2 ELSE 0 END).  
+4.2.2 Edge case II, what if end date is in the weekend: (CASE WHEN DATE_FORMAT(end_date, '%W') = 'Saturday' THEN +1 WHEN DATE_FORMAT(end_date, '%W') = 'Sunday' THEN +2 ELSE 0 END)    
 
 ### To sum up, how many days of weekends between start_date and end_date:    
     (DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))) x 2 + 
