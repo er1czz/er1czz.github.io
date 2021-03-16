@@ -8,18 +8,18 @@
 - Once you ran a complicated query successfully, make a copy just in case. 
 
 ## 1. [Setup](https://aws.amazon.com/blogs/machine-learning/run-sql-queries-from-your-sagemaker-notebooks-using-amazon-athena/) (assume you have installed the perm to access AWS S3)   
-import sys  
-!{sys.executable} -m pip install PyAthena  
+   import sys  
+   !{sys.executable} -m pip install PyAthena  
 
-from pyathena import connect  
-import pandas as pd  
-conn = connect(s3_staging_dir='<ATHENA QUERY RESULTS LOCATION>',  region_name='<YOUR REGION, for example, us-east-1>')  
+   from pyathena import connect  
+   import pandas as pd  
+   conn = connect(s3_staging_dir='<ATHENA QUERY RESULTS LOCATION>',  region_name='<YOUR REGION, for example, us-east-1>')  
 
-test = pd.read_sql("""  
-SELECT *  
-FROM "db"."table"  
-LIMIT 3  
-;""", conn)  
+   test = pd.read_sql("""  
+   SELECT *  
+   FROM "db"."table"  
+   LIMIT 3  
+   ;""", conn)  
 
 #### (Note: pay attention to the number of quotation marks, different from the AWS tutorial which is strangly not working).
 
@@ -27,8 +27,8 @@ LIMIT 3
    DATE(DATE_PARSE('20201010', '%y%m%d'))  
    
 ## 3. Day of the week
-EXTRACT(DAY_OF_WEEK FROM DATE('2020-10-10'))     (e.g. 1,2,3,4,5,6,7).   
-DATE_FORMAT(DATE('2020-10-10'), '%W').   (e.g. Monday, Tuesday, ..., Sunday). 
+   EXTRACT(DAY_OF_WEEK FROM DATE('2020-10-10'))     (e.g. 1,2,3,4,5,6,7).   
+   DATE_FORMAT(DATE('2020-10-10'), '%W').   (e.g. Monday, Tuesday, ..., Sunday). 
 
 ## 4. How to calculate weekdays (my way, many popular methods are not applicable to Athena) 
 To calculate weekdays is essentially to calcualte weekends.  
