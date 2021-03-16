@@ -6,7 +6,7 @@
 - Quotation " " is different from ' '.
 - Be patient. Often the error is caused by typo, especially the extra *comma* before **FROM**; 
 - Once you ran a complicated query successfully, make a copy just in case. 
-- Note: Copy from text editors such as MS Word can sometimes cause error such as autocorrect ' with ‘.
+- Note: Direct copying from text editors such as MS Word can sometimes cause error due to autocorrection such as replacing ' with ‘.
 
 ## 1. [Setup](https://aws.amazon.com/blogs/machine-learning/run-sql-queries-from-your-sagemaker-notebooks-using-amazon-athena/) (assume you have installed the perm to access AWS S3)   
    import sys  
