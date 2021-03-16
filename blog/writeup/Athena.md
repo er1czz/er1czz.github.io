@@ -28,10 +28,10 @@ DATE_FORMAT(DATE('2020-10-10'), '%W').   (e.g. Monday, Tuesday, ..., Sunday).
 ## 4. How to calculate weekdays (my way, many popular methods are not applicable to Athena) 
 To calculate weekdays is essentially to calcualte weekends.  
 e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole week.  
-2020-12-03 (Thu) to 2020-12-04 (Fri): 1. 
-2020-12-07 (Mon) to 2020-12-11 (Fri): 5. 
-2020-12-14 (Mon) to 2020-12-16 (Wed): 3. 
-Two weekends (four days in total), 9 business days. (9 business days = 13 days - 4 days). 
+- - 2020-12-03 (Thu) to 2020-12-04 (Fri): 1. 
+- - 2020-12-07 (Mon) to 2020-12-11 (Fri): 5. 
+- - 2020-12-14 (Mon) to 2020-12-16 (Wed): 3. 
+- - - Two weekends (four days in total), 9 business days. (9 business days = 13 days - 4 days). 
 ### Note:
 - In Python Pandas, len(pd.bdate_range('2020-12-03', '2020-12-14')) **-1** = 9. 
 - In Office Excel, NETWORKDAYS(date1, date2) **- 1** = 9. 
