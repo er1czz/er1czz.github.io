@@ -13,7 +13,7 @@
 
    from pyathena import connect  
    import pandas as pd  
-   conn = connect(s3_staging_dir='<ATHENA QUERY RESULTS LOCATION>',  region_name='<YOUR REGION, for example, us-east-1>')  
+   conn = connect(s3_staging_dir='your_query_location_can_be_found_in_Athena_settings',  region_name='YOUR REGION, for example, us-east-1')  
 
    test = pd.read_sql("""  
    SELECT *  
