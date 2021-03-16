@@ -1,5 +1,5 @@
 # AWS Athena is based on Presto SQL, which may take some time to get comfortable with. 
-note: 
+#### note: 
 - Athena query is case sensitive (can be different functions); 
 - In Athena, if you select certain section with cursor, Athena will only run the selected section;
 - To date, creating tables can only be done in Athena not PyAthena; 
@@ -21,7 +21,7 @@ FROM "db"."table"
 LIMIT 3  
 ;""", conn)  
 
-### (Note: pay attention to the number of quotation marks, different from the AWS tutorial which is strangly not working).
+#### (Note: pay attention to the number of quotation marks, different from the AWS tutorial which is strangly not working).
 
 ## 2. How to convert a numerical string to date (e.g. 20201010 to 2020-10-10)  
    DATE(DATE_PARSE('20201010', '%y%m%d'))  
@@ -37,15 +37,15 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
 - - 2020-12-07 (Mon) to 2020-12-11 (Fri): 5. 
 - - 2020-12-14 (Mon) to 2020-12-16 (Wed): 3. 
 - - - Two weekends (four days in total), 9 business days. (9 business days = 13 days - 4 days). 
-### Note:
+#### Note:
 - In Python Pandas, len(pd.bdate_range('2020-12-03', '2020-12-14')) **-1** = 9. 
 - In Office Excel, NETWORKDAYS(date1, date2) **- 1** = 9. 
 
-### In Athena,
+#### In Athena,
 **DATE_DIFF, DATE_TRUNC, DATE_FORMAT, and CASE**  
 
-### <<<<<<<< week 1 >>>>>>> start_date >>
-### <<<<<<<< week x >>>>>>> end_date >>
+#### <<<<<<<< week 1 >>>>>>> start_date >>
+#### <<<<<<<< week x >>>>>>> end_date >>
 #### Note: Drawing the timeline (bulk) on a sketch paper is helpful to understand their relationship.
 
 4.1 How many days between start_date and end_date: DATE_DIFF('DAY', DATE(start_date), DATE(end_date))  
