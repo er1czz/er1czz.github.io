@@ -22,9 +22,9 @@ LIMIT 3
    DATE(DATE_PARSE('20201010', '%Y%M%D'))  
    
 3. How to calculate weekdays (many popular methods are not applicable)  
-**DATE_DIFF, DATE_TRUNC, DATE_FORMAT, and CASE**
-3.1 How many days between start_date and end_date: DATE_DIFF('DAY', DATE(start_date), DATE(end_date))
-3.2 How many weeks between start_date and end_date: DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))
-3.3 Edge cases what if start date is in the weekend: CASE WHEN DATE_FORMAT('W', start_date) = 'Saturday' THEN -2 WHEN DATE_FORMAT('W', start_date) = 'Sunday' THEN -1 ELSE 0 END
-3.4 Edge case what if end date is in the weekend: CASE WHEN DATE_FORMAT('W', end_date) = 'Saturday' THEN +1 WHEN DATE_FORMAT('W', end_date) = 'Sunday' THEN +2 ELSE 0 END
-To sum up, DATE_DIFF
+**DATE_DIFF, DATE_TRUNC, DATE_FORMAT, and CASE**  
+3.1 How many days between start_date and end_date: DATE_DIFF('DAY', DATE(start_date), DATE(end_date))  
+3.2 How many weeks between start_date and end_date: DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))  
+3.3 Edge cases I what if start date is in the weekend: CASE WHEN DATE_FORMAT('W', start_date) = 'Saturday' THEN -2 WHEN DATE_FORMAT('W', start_date) = 'Sunday' THEN -1 ELSE 0 END  
+3.4 Edge case II what if end date is in the weekend: CASE WHEN DATE_FORMAT('W', end_date) = 'Saturday' THEN +1 WHEN DATE_FORMAT('W', end_date) = 'Sunday' THEN +2 ELSE 0 END  
+To sum up, DATE_DIFF  
