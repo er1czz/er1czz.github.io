@@ -14,7 +14,7 @@ conn = connect(s3_staging_dir='<ATHENA QUERY RESULTS LOCATION>',  region_name='<
 
 test = pd.read_sql("""  
 SELECT *  
-FROM "athenaquery"."<YOUR TABLE NAME>"  
+FROM "db"."table"  
 LIMIT 3  
 ;""", conn)  
 
