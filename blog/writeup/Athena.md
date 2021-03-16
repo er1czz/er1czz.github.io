@@ -2,7 +2,7 @@
 note: 
 - Athena query is case sensitive (can be different functions); 
 - Creating tables can only be done in Athena not PyAthena (to date); 
-- Quotation "" is different from ''.
+- Quotation " " is different from ' '.
 
 ## 1. [Setup](https://aws.amazon.com/blogs/machine-learning/run-sql-queries-from-your-sagemaker-notebooks-using-amazon-athena/) (assume you have installed the perm to access AWS S3)   
 import sys  
