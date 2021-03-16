@@ -48,21 +48,21 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
 #### <<<<<<<< week x >>>>>>> end_date >>
 #### Note: Drawing the timeline (bulk) on a sketch paper is helpful to understand their relationship.
 
-4.1 How many days between start_date and end_date:   
+### 4.1 How many days between start_date and end_date:   
     DATE_DIFF('DAY', DATE(start_date), DATE(end_date))  
 
-4.2 How many weeks between start_date and end_date:   
-    DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))   
+### 4.2 How many weeks between start_date and end_date:   
+    DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))    
 
-4.2.1 Edge cases I, what if start date is in the weekend:   
-    (CASE WHEN DATE_FORMAT(start_date, '%W') = 'Saturday' THEN -1 
-    WHEN DATE_FORMAT(start_date, '%W') = 'Sunday' THEN -2 
+### 4.2.1 Edge cases I, what if start date is in the weekend:   
+    (CASE WHEN DATE_FORMAT(start_date, '%W') = 'Saturday' THEN -1   
+    WHEN DATE_FORMAT(start_date, '%W') = 'Sunday' THEN -2   
     ELSE 0 END).  
 
-4.2.2 Edge case II, what if end date is in the weekend:   
-    (CASE WHEN DATE_FORMAT(end_date, '%W') = 'Saturday' THEN +1 
-    WHEN DATE_FORMAT(end_date, '%W') = 'Sunday' THEN +2 
-    ELSE 0 END)    
+### 4.2.2 Edge case II, what if end date is in the weekend:   
+    (CASE WHEN DATE_FORMAT(end_date, '%W') = 'Saturday' THEN +1   
+    WHEN DATE_FORMAT(end_date, '%W') = 'Sunday' THEN +2   
+    ELSE 0 END)     
 
 ### To sum up, how many days of weekends between start_date and end_date:    
     (DATE_DIFF('WEEK', DATE_TRUC('WEEK', start_date), DATE_TRUNC('WEEK', end_date))) x 2 + 
