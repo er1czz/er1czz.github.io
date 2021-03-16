@@ -60,4 +60,4 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
 - DATE_ADD('day', 7, DATE(given_date)) 
 - DATE_ADD('day', -7, DATE(given_date))
 
-## 6. Everyone hates SageMaker. Nobody enjoy AWS.
+## 6. Everyone hates SageMaker. Nobody likes AWS.
