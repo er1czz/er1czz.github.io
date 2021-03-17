@@ -1,7 +1,7 @@
 # AWS Athena is based on Presto SQL, which may take some time to get comfortable with. 
 #### note: 
 - Athena query is case sensitive (can be different functions); 
-- In Athena, if you select certain section with cursor, Athena will only run the selected section (this feature is very handy for debug long query);
+- In Athena, if you select certain section with cursor, Athena will only run the selected section (this feature is very handy for debugging);
 - To date, creating tables can only be done in Athena not PyAthena; 
 - Quotation " " is different from ' '.
 - Be patient. Often the error is caused by typo, especially the extra *comma* before **FROM**; 
