@@ -1,5 +1,6 @@
 # AWS Athena is based on Presto SQL, which may take some time to get comfortable with. 
 #### note: 
+- SQL best practice: Correctness, readability, then optimization; 
 - Athena query is case sensitive (can be different functions); 
 - In Athena, if you select certain section with cursor, Athena will only run the selected section (this feature comes in handy for debugging long queries);
 - To date, creating tables can only be done in Athena not PyAthena; 
@@ -76,4 +77,7 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
     DATE_ADD('day', 7, DATE(given_date)) 
     DATE_ADD('day', -7, DATE(given_date))
 
-## 6. Everyone hates SageMaker. Nobody likes AWS.
+## 6. Improve readability with CTE (Common Table Expressions)
+    WITH Table_x AS (SELECT ... FROM Original_table)  
+    SELECT ...  
+    FROM Table_x  
