@@ -1,5 +1,6 @@
 # AWS Athena is based on Presto SQL, which may take some time to get comfortable with. 
 #### note: 
+- To make a comment or note, use " **--** note_text" or "**/*** note_text ***/**"
 - SQL best practice: Correctness, readability, then optimization; 
 - Athena query is case sensitive (Upper case and lower case keywords lead to different functions); 
 - In Athena, if you select certain section with cursor, Athena will only run the selected section (this feature comes in handy for debugging long queries);
@@ -7,7 +8,7 @@
 - Quotation " " is different from ' '.
 - Be patient. Often the error is caused by typo, especially the extra *comma* before **FROM**; 
 - Once you ran a complicated query successfully, make a copy just in case. 
-- Note: Direct copying from text editors such as MS Word can sometimes cause error due to autocorrection such as replacing ' with ‘.
+- Reminder: Direct copying from text editors such as MS Word can sometimes cause error due to autocorrection such as replacing ' with ‘.
 
 ## 1. [Setup](https://aws.amazon.com/blogs/machine-learning/run-sql-queries-from-your-sagemaker-notebooks-using-amazon-athena/) (assume you have installed the perm to access AWS S3)   
    import sys  
