@@ -1,7 +1,7 @@
 # AWS Athena is based on Presto SQL, which may take some time to get comfortable with. 
 #### note: 
 - SQL best practice: Correctness, readability, then optimization; 
-- Athena query is case sensitive (can be different functions); 
+- Athena query is case sensitive (Upper case and lower case keywords lead to different functions); 
 - In Athena, if you select certain section with cursor, Athena will only run the selected section (this feature comes in handy for debugging long queries);
 - To date, creating tables can only be done in Athena not PyAthena; 
 - Quotation " " is different from ' '.
