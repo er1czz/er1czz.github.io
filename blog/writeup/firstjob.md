@@ -6,4 +6,6 @@ First Job
 5. Thanks to my family, friends, and Insight fellows
 6. 2021 is even more eventful. (US Election, granny, company aquisition, company reorg)
 
+### "But if you go there and do this modeling for your PhD, promise me one thing:   do NOT just do modeling.  Work somehow or be involved with the actual system that you are trying to model.   Know that system extremely well, physically and chemically.   Your models, which can be the main part of your work, will mean nothing unless you REALLY understand WHAT you are modeling.   Do you understand?   If you do that, your work will be twice as powerful."
+
 
