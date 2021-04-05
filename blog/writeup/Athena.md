@@ -30,9 +30,9 @@
    DATE(DATE_PARSE('20201010', '%y%m%d'))  
    
 ## 3. Day of the week, Week of the year
-   EXTRACT(DAY_OF_WEEK FROM DATE('2020-10-10'))     (e.g. 1,2,3,4,5,6,7).   
-   DATE_FORMAT(DATE('2020-10-10'), '%W')   (e.g. Monday, Tuesday, ..., Sunday). 
-   EXTRACT(WEEK FROM DATE('2020-10-10'))     (e.g. 1,2,3,..., 53).  
+  - EXTRACT(DAY_OF_WEEK FROM DATE('2020-10-10'))     (e.g. 1,2,3,4,5,6,7).   
+  - DATE_FORMAT(DATE('2020-10-10'), '%W')   (e.g. Monday, Tuesday, ..., Sunday). 
+  - EXTRACT(WEEK FROM DATE('2020-10-10'))     (e.g. 1,2,3,..., 53).  
    
 ## 4. How to calculate weekdays (my way, many popular methods are not applicable to Athena) 
 To calculate weekdays is essentially to calcualte weekends.  
