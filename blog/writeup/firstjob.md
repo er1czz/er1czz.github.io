@@ -13,7 +13,7 @@ First Job
 
 - The trigger that made me took a leap of faith is the advise from my friends in data science: "3 months would be enough for a STEM PhD to start a career as a data scientsit." First, I used Kaggle and Andrew Ng's ML course on Coursera as a starter. Kaggle challenges helped me get familar with the basics of ML pipeline and Jupyter Notebook by following the receipt to bake my first project "Titanic". Andrew Ng's course is a well-taught classic and worth rewatching. While I was watching the course, I was continue practicing Kaggle Challenges. My second Kaggle Challenge is the house price prediction, which helped me to implement regression models ("Titanic" is about classification). I took the next Kaggle Challenge much more seriously. I wanted to use it as demo for my code interview of Insight Data Science Fellowship. So I wanted to understand every detail and started it from scratch. I delibrately chose the Fraud detection so that I can take advantage of the expertise of my friends who are working in Fin-tech. On my GibHub, there are four versions reflecting how I levled-up this project gradually. (Side note: I have completed four Kaggle Challenges in total.) 
 
-- My main takeaways from my transition period:
+- My main takeaways from my starting period:
 - 1. Learning by doing. Taking course while practicing data challenges. It really suits my learning style, as an experimentalist, to grasp the nature of ML process.
 - 2. Carefully selecting a project (e.g. in the domain you are familar with) and perfecting it wholeheartedly is a good learning experience.
 
