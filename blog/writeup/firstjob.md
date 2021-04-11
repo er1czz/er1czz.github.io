@@ -1,4 +1,4 @@
-First Job
+# First Job
 1. To be or not to be: my journal from a geoscientist to data scientist, a self-intro
 2. 2020 is eventful: prepare for the job market at the end of 2020 (First offer before Xmas)  
 3. Interview is all about personal connection
