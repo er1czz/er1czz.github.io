@@ -17,4 +17,4 @@ First Job
 - -  1. Learning by doing. Taking course while practicing data challenges. It really suits my learning style, as an experimentalist, to grasp the nature of ML process through hands-on practice.
 - -  2. Carefully selecting a project (e.g. in the domain you are familar with) and perfecting it wholeheartedly is a good learning experience.
 
-- Insight Data Science and Citrine Informatics (to be continued)
+- First interview and Insight Data Science Fellowship (to be continued)
