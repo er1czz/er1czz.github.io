@@ -83,3 +83,5 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
     WITH Table_x AS (SELECT ... FROM Original_table)  
     SELECT ...  
     FROM Table_x  
+## 7. Additional reading (better than official documentation)
+    https://athena.guide/
