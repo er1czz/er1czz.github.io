@@ -17,6 +17,7 @@
 - -  1. Learning by doing. Taking course while practicing data challenges. It really suits my learning style, as an experimentalist, to grasp the nature of ML process through hands-on practice.
 - -  2. Carefully selecting a project (e.g. in the domain you are familar with) and perfecting it wholeheartedly is a good learning experience.
 
+- TBC
 - First interview and Insight Data Science Fellowship (to be continued)
 - First interview as a material / data scientist at Citrine Informatics  (2 weeks data challenge and research writeup)   
 - Insight Data Science (7-week program, September 14, 2020 to October 30, 2020)   
