@@ -84,11 +84,12 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
     SELECT ...  
     FROM Table_x  
 ## 7. Window functions (with OVER)
-    To date, Athena does not support window alias.
     ROW_NUMBER():  for rows that have duplicate values,numbers are arbitarily assigned., e.g. 1, 2, 3, 4, ...    
     RANK(): 1, 1, 1, 4, ...  
     DENSE_RANK(): 1, 1, 1, 2, ...  
     LAG() AND LEAD(): LAG pulls from previous rows and LEAD pulls from following rows.  
+### To date, Athena does not support window alias.
+
 ## 8. Additional reading 
     https://athena.guide/ (better than official documentation)  
     https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/  
