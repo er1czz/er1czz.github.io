@@ -93,3 +93,4 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
 ## 8. Additional reading 
     https://athena.guide/ (better than official documentation)  
     https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/  
+    https://skeptric.com/presto-integer-division/ (integer to percent)
