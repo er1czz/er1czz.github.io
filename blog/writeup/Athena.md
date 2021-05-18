@@ -94,3 +94,7 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
     https://athena.guide/ (better than official documentation)  
     https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/  
     https://skeptric.com/presto-integer-division/ (integer to percent)
+    
+## 9. trick
+    - array_join(array_distinct(array_sort(array_agg(claim_type))), ', ') AS claim_type
+
