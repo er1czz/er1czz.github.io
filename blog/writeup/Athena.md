@@ -96,5 +96,5 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
     https://skeptric.com/presto-integer-division/ (integer to percent)
     
 ## 9. Tricks
-    ARRAY_JOIN(ARRAY_DISTINCT(ARRAY_SORT(ARRAY_AGG(claim_type))), ', ') AS claim_type
+    ARRAY_JOIN(ARRAY_DISTINCT(ARRAY_SORT(ARRAY_AGG(adjudication))), ', ') AS adjudication
 
