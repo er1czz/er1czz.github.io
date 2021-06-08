@@ -6,3 +6,5 @@
     -  brew update
     -  conda update -n base conda    
     -  conda update --all
+4. My python notes
+    -  https://github.com/er1czz/python
