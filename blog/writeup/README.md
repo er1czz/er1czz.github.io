@@ -6,6 +6,6 @@
     -  brew update
     -  conda update -n base conda    
     -  conda update --all
-    -  in terminal, type <b>!*j*</b> will start last command start with <b>*j*</b> such as 'jupyter notebook'.
+    -  in terminal, type <b>*!j*</b> will start last command start with <b>*j*</b> such as 'jupyter notebook'.
 4. My python notes
     -  https://github.com/er1czz/python
