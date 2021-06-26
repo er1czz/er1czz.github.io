@@ -112,7 +112,6 @@ def sampler(value='123xyz'):
    SELECT  *
    FROM "db_xxx"."table_xxx"  
    WHERE id IN ('123xyz')
-   ORDER BY claim_tcn_id, CAST(service_line_number AS INTEGER)
    ;  """
     
    param = param.replace('123xyz',value)
@@ -120,4 +119,6 @@ def sampler(value='123xyz'):
     
    return sample
 ```
-
+??  cursor = connect(s3_staging_dir=STAGIN_DIR,
+                 region_name=REGION).cursor()
+   df = cursor.execute(QUERY).as_pandas()
