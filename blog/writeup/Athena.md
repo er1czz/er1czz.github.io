@@ -96,9 +96,13 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
     https://skeptric.com/presto-integer-division/ (integer to percent)
     
 ## 9. Tricks
+
+**Aggregate function on Athena**
+```
     ARRAY_JOIN(ARRAY_DISTINCT(ARRAY_SORT(ARRAY_AGG(value))), ', ') AS values
-    
- **One way to automate Athena**
+```
+
+ **To automate Athena**
 ```
 def sampler(value='123xyz'):
    import pandas as pd
@@ -108,17 +112,21 @@ def sampler(value='123xyz'):
    region = 'xxx'
    conn = connect(s3_staging_dir= s3_dir, region_name= region)
     
-   param = """
+   query = """
    SELECT  *
    FROM "db_xxx"."table_xxx"  
    WHERE id IN ('123xyz')
    ;  """
     
-   param = param.replace('123xyz',value)
-   sample = pd.read_sql(param, conn)
+   query = query.replace('123xyz',value)
+   sample = pd.read_sql(query, conn)
     
    return sample
 ```
-??  cursor = connect(s3_staging_dir=STAGIN_DIR,  
-                 region_name=REGION).cursor()  
-   df = cursor.execute(QUERY).as_pandas()  
+** alternatively**
+   from pyathena.pandas.util import as_pandas
+   
+   cursor = connect(s3_staging_dir=STAGIN_DIR, region_name=REGION).cursor()
+   query = ...
+   cursor.execute(query)
+   df = as_pandas(cursor)  
