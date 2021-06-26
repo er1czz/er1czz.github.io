@@ -98,8 +98,9 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
 ## 9. Tricks
     ARRAY_JOIN(ARRAY_DISTINCT(ARRAY_SORT(ARRAY_AGG(value))), ', ') AS values
     
-``` *One way to automate Athena*
-    def sampler(value='123xyz'):
+ **One way to automate Athena**
+```
+   def sampler(value='123xyz'):
     import pandas as pd
     from pyathena import connect
 
