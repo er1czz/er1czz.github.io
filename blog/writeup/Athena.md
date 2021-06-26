@@ -119,6 +119,6 @@ def sampler(value='123xyz'):
     
    return sample
 ```
-??  cursor = connect(s3_staging_dir=STAGIN_DIR,
-                 region_name=REGION).cursor()
-   df = cursor.execute(QUERY).as_pandas()
+??  cursor = connect(s3_staging_dir=STAGIN_DIR,  
+                 region_name=REGION).cursor()  
+   df = cursor.execute(QUERY).as_pandas()  
