@@ -96,11 +96,9 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
     https://skeptric.com/presto-integer-division/ (integer to percent)
     
 ## 9. Tricks
-    ARRAY_JOIN(ARRAY_DISTINCT(ARRAY_SORT(ARRAY_AGG(adjudication))), ', ') AS adjudication
-   
-    One way to automate Athena
+    ARRAY_JOIN(ARRAY_DISTINCT(ARRAY_SORT(ARRAY_AGG(value))), ', ') AS values
     
-```
+``` <b>One way to automate Athena</b>
     def sampler(value='123xyz'):
     import pandas as pd
     from pyathena import connect
