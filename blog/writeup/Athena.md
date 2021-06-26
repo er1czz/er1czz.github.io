@@ -100,24 +100,24 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
     
  **One way to automate Athena**
 ```
-   def sampler(value='123xyz'):
-    import pandas as pd
-    from pyathena import connect
+def sampler(value='123xyz'):
+   import pandas as pd
+   from pyathena import connect
 
-    s3_dir = 's3://xxx'
-    region = 'xxx'
-    conn = connect(s3_staging_dir= s3_dir, region_name= region)
+   s3_dir = 's3://xxx'
+   region = 'xxx'
+   conn = connect(s3_staging_dir= s3_dir, region_name= region)
     
-    param = """
-    SELECT  *
-    FROM "db_xxx"."table_xxx"  
-    WHERE ##Var## IN ('123xyz')
-    ORDER BY claim_tcn_id, CAST(service_line_number AS INTEGER)
-    ;  """
+   param = """
+   SELECT  *
+   FROM "db_xxx"."table_xxx"  
+   WHERE id IN ('123xyz')
+   ORDER BY claim_tcn_id, CAST(service_line_number AS INTEGER)
+   ;  """
     
-    param = param.replace('123xyz',value)
-    sample = pd.read_sql(param, conn)
+   param = param.replace('123xyz',value)
+   sample = pd.read_sql(param, conn)
     
-    return sample
+   return sample
 ```
 
