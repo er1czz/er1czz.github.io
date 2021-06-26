@@ -123,10 +123,10 @@ def sampler(value='123xyz'):
     
    return sample
 ```
-** alternatively**
-   from pyathena.pandas.util import as_pandas
+** alternatively**  
+   from pyathena.pandas.util import as_pandas  
    
-   cursor = connect(s3_staging_dir=STAGIN_DIR, region_name=REGION).cursor()
-   query = ...
-   cursor.execute(query)
+   cursor = connect(s3_staging_dir=STAGIN_DIR, region_name=REGION).cursor()  
+   query = ...  
+   cursor.execute(query)  
    df = as_pandas(cursor)  
