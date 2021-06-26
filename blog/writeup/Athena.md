@@ -100,7 +100,7 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
    
     One way to automate Athena
     
-    ```
+```
     def sampler(value='123xyz'):
     import pandas as pd
     from pyathena import connect
@@ -119,5 +119,6 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
     param = param.replace('123xyz',value)
     sample = pd.read_sql(param, conn)
     
-    return sample```
+    return sample
+```
 
