@@ -97,4 +97,34 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
     
 ## 9. Tricks
     ARRAY_JOIN(ARRAY_DISTINCT(ARRAY_SORT(ARRAY_AGG(adjudication))), ', ') AS adjudication
+    One way to automate Athena
+    `
+    def sampler(claim_tcn_id='EP041721702869330'):
+    import pandas as pd
+    from pyathena import connect
 
+    s3_dir = 's3://nucleus-chc-preprod-datasciences/users/erzhang/athena-queries/'
+    region = 'us-east-1'
+    conn = connect(s3_staging_dir= s3_dir, region_name= region)
+    
+    param = """
+    SELECT  claim_tcn_id, service_line_number, 
+    denial_code, payer_id, payer_name, 
+    claim_filing_indicator_cd, 
+    service_line_charge_amount,
+    rendering_prov_npi,
+    rendering_prov_taxonomy,
+    billing_prov_npi,
+    procedure_code,
+    procedure_modifier_1, procedure_modifier_2, procedure_modifier_3, procedure_modifier_4,
+    principal_diagnosis_code, claim_received_date, service_to_date, patient_state
+    FROM "clai"."medical_network_extract_v36"  
+    WHERE claim_tcn_id IN ('EP041721702869330')
+    ORDER BY claim_tcn_id, CAST(service_line_number AS INTEGER)
+    ;  """
+    
+    param = param.replace('EP041721702869330',claim_tcn_id)
+    sample = pd.read_sql(param, conn)
+    
+    return sample
+`
