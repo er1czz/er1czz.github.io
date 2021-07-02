@@ -130,3 +130,6 @@ def sampler(value='123xyz'):
    query = ...  
    cursor.execute(query)  
    df = as_pandas(cursor)  
+
+## Redshift tips
+- [Find a column with a particular name from all of the tables in Redshift](https://www.charlenecassar.com/2019/09/10/find-a-column-with-a-particular-name-from-all-of-the-tables-in-redshift/)
