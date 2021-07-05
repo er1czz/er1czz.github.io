@@ -24,4 +24,8 @@
        - Takeaway, although it is a big frustration due to my high hope, I gained more confidence on myself: the data challenge reinforced my overall skills on both indepedent research and data science. It pushed me much hard in terms of the overall quality due to the high expection (high hope).  
    
 - Insight Data Science (7-week program, September 14, 2020 to October 30, 2020) 
-- 
+   - Insight Data science Fellowship is a platform of resources: resources to fine-tune fellows for industry data science practice and opportunities to connect fellows with potential employers. The atomosphere that Insight program intended to foster, at least during my session, was to be open, liberal, and a bit of democratized. However, the spillover of 2020 pandemic was phenomenal. Insight 2020B was the first class that fellows need to pay for the membership instead of hiring employers. I was in 2020C and the fee was much higher than that of 2020B. At the end of 2020C session, Insight announced the fellowship would be suspended due to the finanical cause, although it was resumed at the begining of 2021 but with a smaller capacity. Back then, I was worried about if the session or whole program would be cancelled in the middle. Toronto session of 2020B was cut in the mid due to the program director suddenly quitting the job. The uncertainty in 2020 was so real. Therefore, this 
+   - One perk I really appreciated was the talks hosted by Jake, especially the one with DJ Patil. (*placehold for link*) *Everyone tries to put you into a box and you, as a data scientist, need to convince others that you are not belong to that box.* 
+
+## 2020 is eventful: prepare for the job market at the end of 2020 (First offer before Xmas)
+- Obstacles: 1) Job market 2) Insight project  
