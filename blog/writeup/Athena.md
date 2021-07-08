@@ -89,13 +89,16 @@ e.g. 2020-12-03 (Thu) to 2020-12-16 (Wed) across three weeks but only one whole 
     DENSE_RANK(): 1, 1, 1, 2, ...  
     LAG() AND LEAD(): LAG pulls from previous rows and LEAD pulls from following rows.  
 ### To date, Athena does not support window alias.
-
-## 8. Additional reading 
+## 8. Regular Expression
+    Keep only alphabetic value of a column of strings: array_join(regexp_extract_all((column_name), '[a-zA-Z]+'),'')  
+    Keep only alphanumeric value of a column of strings: array_join(regexp_extract_all((column_name), '[a-zA-Z0-9]+'),'')  
+    Keep only numeric value of a column of strings: array_join(regexp_extract_all((column_name), '[0-9]+'),'')  
+## 9. Additional reading 
     https://athena.guide/ (better than official documentation)  
     https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/  (JOIN small table on the right)  
     https://skeptric.com/presto-integer-division/ (integer to percent)
     
-## 9. Tricks
+## 10. Tricks
 
 **Aggregate function on Athena**
 ```
