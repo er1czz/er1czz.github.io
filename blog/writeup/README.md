@@ -2,7 +2,7 @@
 
 1. [First job](https://github.com/er1czz/er1czz.github.io/blob/master/blog/writeup/firstjob.md): How I prepare my career, job interview, offer negotiation
 2. [Athena (AWS SQL)](https://github.com/er1czz/er1czz.github.io/blob/master/blog/writeup/Athena.md): local setup and some tricks for date and time
-3. Update environment and package (order by step): 
+3. Update environment and package (step order): 
     -  brew update
     -  conda update -n base conda    
     -  conda update --all
