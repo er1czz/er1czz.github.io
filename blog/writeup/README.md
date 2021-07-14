@@ -9,3 +9,6 @@
     -  in terminal, type <b>*!j*</b> will start last command start with <b>*j*</b> such as 'jupyter notebook'.
 4. My python notes
     -  https://github.com/er1czz/python
+
+5. Writeup about conditional probability using reason code as example 
+    - Writeup_Conditional_Probability_for_reason_codes.pdf
