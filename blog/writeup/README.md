@@ -11,4 +11,4 @@
     -  https://github.com/er1czz/python
 
 5. Writeup about conditional probability using reason code as example 
-    - Writeup_Conditional_Probability_for_reason_codes.pdf
+    - [Writeup_Conditional_Probability_for_reason_codes.pdf](https://github.com/er1czz/er1czz.github.io/blob/master/blog/writeup/Writeup_Conditional_Probability_for_reason_codes.pdf)
