@@ -3,6 +3,7 @@
 ### Insight demo: [YouTube](https://youtu.be/dEOtCvfDBio) and [slides](https://er1czz.github.io/cv/Eric_Zhang_insight_demo.pdf)
 ### Award-winning film (2019): [YouTube](https://youtu.be/Hj_nBQFj4o0)
 
+### writeup
 ### References:   
 - https://tfoliojk.themeix.com/  
 - https://imfunniee.github.io/gitfolio/  
