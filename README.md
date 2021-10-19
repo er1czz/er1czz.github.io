@@ -8,3 +8,7 @@
 - https://tfoliojk.themeix.com/  
 - https://imfunniee.github.io/gitfolio/  
 
+### to do
+ - advanced python
+ - engineering
+
