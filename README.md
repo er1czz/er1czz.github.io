@@ -3,5 +3,5 @@
 
 ### writeup [(private repo)](https://github.com/er1czz/writeup)
 ### Website inspiration and reference:   
-- https://tfoliojk.themeix.com/  
+- https://themeix.com/ <s>https://tfoliojk.themeix.com/  </s>
 - https://imfunniee.github.io/gitfolio/  
